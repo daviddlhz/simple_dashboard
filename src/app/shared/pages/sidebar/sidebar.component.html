@@ -1,1 +1,27 @@
-<p>sidebar works!</p>
+<div class="sidebar-container">
+  <div class="sidebar-container__header">
+    <div class="sidebar-container__header__logo">
+      <fa-icon [icon]="iconFaPooStorm"></fa-icon>
+    </div>
+    <div class="sidebar-container__header__brand">
+      <span>Simple Dashboard</span>
+    </div>
+  </div>
+  <ul class="sidebar-container__list">
+    <div class="sidebar-container__list__item">
+      <div class="sidebar-container__list__item__img">
+        <fa-icon [icon]="iconFaUser"></fa-icon>
+      </div>
+      <li class="sidebar-container__list__item__title">
+        Users
+      </li>
+    </div>
+  </ul>
+  <div class="sidebar-container__footer">
+    <img class="sidebar-container__footer__logo" src="./assets/images/picture.webp" alt="Picture of David De La Hoz" />
+    <div class="sidebar-container__footer__data">
+      <div class="sidebar-container__footer__data__title">David De La Hoz</div>
+      <div class="sidebar-container__footer__data__subtitle">Angular Developer</div>
+    </div>
+  </div>
+</div>

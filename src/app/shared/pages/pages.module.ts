@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TopbarComponent } from './topbar/topbar.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-
-
+import { TopbarComponent } from '@shared/pages/topbar/topbar.component';
+import { SidebarComponent } from '@shared/pages/sidebar/sidebar.component';
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 @NgModule({
   declarations: [
@@ -11,7 +10,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     SidebarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FontAwesomeModule
   ],
   exports: [
     TopbarComponent,

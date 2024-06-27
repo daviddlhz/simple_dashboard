@@ -1,0 +1,100 @@
+//Responsive sidebar
+@mixin mobile {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+.sidebar-container {
+  position: relative;
+  width: 300px;
+  height: 100%;
+  background: rgb(16, 8, 24);
+  @include mobile {
+    width: 60px;
+  }
+
+  //sidebar header
+  &__header {
+    display: flex;
+    padding: 15px 20px;
+    background: rgb(45, 30, 60);
+    gap: 15px;
+
+    &__logo {
+      color: white;
+    }
+    &__brand {
+      color: white;
+
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  //sidebar list
+  &__list {
+    color: white;
+    margin-top: 10px;
+
+    &__item {
+      display: flex;
+      padding: 10px 20px;
+      gap: 15px;
+      color: #afafaf;
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      &__title {
+        @include mobile {
+          display: none;
+        }
+      }
+
+      li {
+        list-style: none;
+      }
+    }
+
+    &__item:hover {
+      color: white;
+      background: rgb(45, 30, 60);
+    }
+  }
+
+  //sidebar footer
+  &__footer {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    gap: 15px;
+    position: absolute;
+    cursor: pointer;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(45, 30, 60);
+    @include mobile {
+      display: none;
+    }
+
+    &__logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    &__data {
+      &__title {
+        font-weight: 500;
+        color: white;
+      }
+      &__subtitle {
+        font-weight: 400;
+        color: #afafaf;
+        font-size: 0.8em;
+      }
+    }
+  }
+}
