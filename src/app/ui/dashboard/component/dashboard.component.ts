@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {faFaceLaughBeam, faPooStorm} from "@fortawesome/free-solid-svg-icons";
+import {faFaceLaughBeam} from "@fortawesome/free-solid-svg-icons";
 import {IconDefinition} from "@fortawesome/angular-fontawesome";
 
 @Component({
