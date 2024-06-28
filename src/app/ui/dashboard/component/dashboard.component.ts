@@ -1,4 +1,6 @@
 import {Component} from "@angular/core";
+import {faFaceLaughBeam, faPooStorm} from "@fortawesome/free-solid-svg-icons";
+import {IconDefinition} from "@fortawesome/angular-fontawesome";
 
 @Component({
   selector: 'dashboard-component',
@@ -6,5 +8,5 @@ import {Component} from "@angular/core";
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
-
+  iconFaFaceLaughBeam: IconDefinition = faFaceLaughBeam;
 }
