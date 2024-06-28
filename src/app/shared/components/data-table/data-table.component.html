@@ -1,0 +1,28 @@
+<div class="data-table-container">
+  <div class="search-box">
+    <input type="text" [(ngModel)]="searchText" placeholder="Buscar por nombre..." (input)="onSearch()" />
+  </div>
+  <div class="table-responsive">
+    <table>
+      <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Correo Electrónico</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of paginatedData">
+        <td>{{ item.nombre }}</td>
+        <td>{{ item.edad }}</td>
+        <td>{{ item.email }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <ul class="pagination">
+    <li *ngFor="let page of totalPagesArray" (click)="changePage(page)">
+      <a [class.active]="currentPage === page">{{ page }}</a>
+    </li>
+  </ul>
+</div>
