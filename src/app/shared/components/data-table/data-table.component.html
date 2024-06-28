@@ -1,42 +1,42 @@
 @if (!isDataLoaded) {
-  <div class="spinner">
-    <fa-icon size="8x" animation="spin" [icon]="iconFaSpinner"></fa-icon>
-  </div>
+<div class="spinner">
+  <fa-icon size="8x" animation="spin" [icon]="iconFaSpinner"></fa-icon>
+</div>
 } @else {
-  <div class="data-table-container">
-    <div class="search-box">
-      <input type="text" [(ngModel)]="searchText" placeholder="Search for name..." (input)="onSearch()" />
-    </div>
-    <div class="table-responsive">
-      <table>
-        <thead>
+<div class="data-table-container">
+  <div class="search-box">
+    <input type="text" [(ngModel)]="searchText" placeholder="Search for name..." (input)="onSearch()" />
+  </div>
+  <div class="table-responsive">
+    <table>
+      <thead>
         <tr>
           @for (header of headerDataTable; track header) {
-            <th>{{ header }}</th>
+          <th>{{ header }}</th>
           }
         </tr>
-        </thead>
-        <tbody>
+      </thead>
+      <tbody>
         @if (!hasDataFilter) {
-          <div class="notDataFound">
-            <span>Not data found</span>
-          </div>
-        } 
+        <div class="notDataFound">
+          <span>Not data found</span>
+        </div>
+        }
         @else {
-          <tr *ngFor="let item of paginatedData">
-            <td>{{ item.name }}</td>
-            <td>{{ item.email }}</td>
-            <td>{{ item.address.street }}</td>
-            <td>{{ item.phone }}</td>
-          </tr>
-        } 
-        </tbody>
-      </table>
-    </div>
-    <ul class="pagination">
-      <li *ngFor="let page of totalPagesArray" (click)="changePage(page)">
-        <a [class.active]="currentPage === page">{{ page }}</a>
-      </li>
-    </ul>
+        <tr *ngFor="let item of paginatedData">
+          <td>{{ item.name }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.address.street }}</td>
+          <td>{{ item.phone }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
   </div>
+  <ul class="pagination">
+    <li *ngFor="let page of totalPagesArray" (click)="changePage(page)">
+      <a [class.active]="currentPage === page">{{ page }}</a>
+    </li>
+  </ul>
+</div>
 }
