@@ -6,8 +6,10 @@ export interface UserEntity {
   name: string,
   username: string,
   email: string,
-  "address": Address
-  "phone": string,
-  "website": string,
-  "company": Company
+  address: Address
+  phone: string,
+  website: string,
+  company: Company
 }
+
+export type UserData = Pick<UserEntity, "name" | "email" | "address" | "phone">
