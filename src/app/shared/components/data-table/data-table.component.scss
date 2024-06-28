@@ -12,6 +12,8 @@
   padding: 30px;
   color: white;
   height: 60vh;
+  border-radius: 15px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   @include mobile {
     width: 60vw;
@@ -40,6 +42,13 @@
 .table-responsive {
   width: 100%;
   overflow-x: auto;
+}
+
+.spinner {
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 table {

@@ -11,3 +11,5 @@ export interface UserEntity {
   "website": string,
   "company": Company
 }
+
+export type UserData = Pick<UserEntity, "name" | "email" | "address" | "phone">

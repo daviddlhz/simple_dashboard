@@ -1,50 +1,39 @@
-import { Component } from '@angular/core';
-
-interface UserData {
-  nombre: string;
-  edad: number;
-  email: string;
-}
+import {AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {UserData} from "@domain/entities/user.entity";
+import {faSpinner, faUser} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'data-table-component',
   templateUrl: './data-table.component.html',
   styleUrl: './data-table.component.scss'
 })
-export class DataTableComponent {
-  data: UserData[] = [
-    { nombre: 'Juan Pérez', edad: 28, email: 'juan@example.com' },
-    { nombre: 'María García', edad: 34, email: 'maria@example.com' },
-    { nombre: 'Carlos Rodríguez', edad: 25, email: 'carlos@example.com' },
-    { nombre: 'Juan Pérez', edad: 28, email: 'juan@example.com' },
-    { nombre: 'María García', edad: 34, email: 'maria@example.com' },
-    { nombre: 'Carlos Rodríguez', edad: 25, email: 'carlos@example.com' },
-    { nombre: 'Juan Pérez', edad: 28, email: 'juan@example.com' },
-    { nombre: 'María García', edad: 34, email: 'maria@example.com' },
-    { nombre: 'Carlos Rodríguez', edad: 25, email: 'carlos@example.com' },
-    { nombre: 'Juan Pérez', edad: 28, email: 'juan@example.com' },
-    { nombre: 'María García', edad: 34, email: 'maria@example.com' },
-    { nombre: 'Carlos Rodríguez', edad: 25, email: 'carlos@example.com' },
-    // Agrega más datos según sea necesario
-  ];
-  rowsPerPage = 5;
-  currentPage = 1;
-  searchText = '';
+export class DataTableComponent implements OnChanges {
+
+  @Input() userData!: UserData[];
+
+  iconFaSpinner = faSpinner;
+  rowsPerPage: number = 5;
+  currentPage: number = 1;
+  searchText: string = '';
   paginatedData: UserData[] = [];
   totalPagesArray: number[] = [];
+  isDataLoaded: boolean = false;
 
-  ngOnInit() {
-    this.updatePagination();
+  ngOnChanges(): void {
+    if (this.userData && this.userData.length > 0) {
+      this.updatePagination();
+      this.isDataLoaded = true;
+    }
   }
 
-  onSearch() {
+  onSearch(): void {
     this.currentPage = 1;
     this.updatePagination();
   }
 
-  updatePagination() {
-    const filteredData = this.data.filter(item =>
-      item.nombre.toLowerCase().includes(this.searchText.toLowerCase())
+  updatePagination(): void {
+    const filteredData = this.userData.filter((data: UserData) =>
+      data.name.toLowerCase().includes(this.searchText.toLowerCase())
     );
     const totalItems = filteredData.length;
     const totalPages = Math.ceil(totalItems / this.rowsPerPage);
@@ -55,8 +44,10 @@ export class DataTableComponent {
     );
   }
 
-  changePage(page: number) {
+  changePage(page: number): void {
     this.currentPage = page;
     this.updatePagination();
   }
+
+  protected readonly iconFaUser = faUser;
 }
