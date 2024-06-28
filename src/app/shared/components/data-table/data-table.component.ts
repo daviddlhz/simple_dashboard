@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges} from '@angular/core';
 import {UserData} from "@domain/entities/user.entity";
 import {faSpinner, faUser} from "@fortawesome/free-solid-svg-icons";
 

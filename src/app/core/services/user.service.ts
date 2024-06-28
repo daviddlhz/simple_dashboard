@@ -1,4 +1,4 @@
-import {Injectable, OnInit} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {IUserService} from "@domain/interfaces/user.interface";
 import {Observable} from "rxjs";
 import {HttpClient, HttpResponse} from "@angular/common/http";

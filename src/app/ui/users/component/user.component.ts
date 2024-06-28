@@ -24,7 +24,7 @@ export class UserComponent implements OnInit {
       next: (response: HttpResponse<UserEntity[]>) => {
         this.usersData = response.body || [];
       },
-      error: (error: HttpErrorResponse) => console.log("error fetch data")
+      error: (error: HttpErrorResponse) => console.log("error fetch data", error)
     })
   }
 }
