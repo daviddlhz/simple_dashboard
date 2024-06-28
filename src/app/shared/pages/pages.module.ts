@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TopbarComponent } from '@shared/pages/topbar/topbar.component';
 import { SidebarComponent } from '@shared/pages/sidebar/sidebar.component';
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
-    TopbarComponent,
     SidebarComponent
   ],
   imports: [
@@ -16,7 +14,6 @@ import {RouterModule} from "@angular/router";
     RouterModule
   ],
   exports: [
-    TopbarComponent,
     SidebarComponent
   ]
 })
