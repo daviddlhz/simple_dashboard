@@ -30,7 +30,7 @@ Simple Dashboard es una aplicación web desarrollada con Angular que muestra una
 
 1. Clona el repositorio:
    ```bash
-   git clone <URL del repositorio>
+   git clone https://github.com/daviddlhz/simple_dashboard.git
    cd simple-dashboard
    ```
 
