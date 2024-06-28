@@ -23,7 +23,7 @@ Simple Dashboard es una aplicación web desarrollada con Angular que muestra una
 
 ### Prerrequisitos
 
-- Node.js (v14 o superior)
+- Node.js (v18 o superior)
 - Angular CLI
 
 ### Instalación
